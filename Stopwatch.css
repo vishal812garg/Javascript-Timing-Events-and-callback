@@ -1,0 +1,52 @@
+body{
+    text-align: center;
+}
+
+#main{
+    background:rgb(63, 59, 87);
+    width: 50%;
+    height: 400px;
+    margin-top: 100px;
+    margin-left: 350px;
+    border-radius: 15px;
+}
+
+
+
+h1{
+    color: white;
+    padding-top: 50px;
+    font-size: 50px;
+}
+
+#pp{
+    margin-top: 100px;
+    color: white;
+    font-size: 50px;
+}
+
+
+#second , #millisecond{
+    color: white;
+    font-size: 50px;
+}
+
+
+#cc{
+    margin-top: 50px;
+}
+
+#startbutton , #stopbutton , #resetbutton{
+    background:goldenrod;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+    padding: 15px 15px;
+}
+
+
+
+#startbutton:hover , #stopbutton:hover  , #resetbutton:hover{
+    background: black;
+    color: white;
+} 

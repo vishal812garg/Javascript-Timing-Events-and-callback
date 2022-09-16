@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="Stopwatch.css">
+
+</head>
+<body>
+    <div id="main">
+              <h1>Stopwatch</h1>
+         <div id="pp">
+                   <span id="hours">00</span>:
+                   <span id="minutes">00</span>:
+                   <span id="second">00</span>:
+                   <span id="millisecond">00</span>
+                
+        </div>
+        <div id="cc">
+                   <button type="button" id="startbutton">Start</button>
+                   <button type="button" id="stopbutton">Stop</button>
+                   <button type="button" id="resetbutton">Reset</button>
+        </div>
+      </div>
+
+       
+
+
+
+      <script>
+        
+                      var _second = document.getElementById("second");
+                      var _millisecond = document.getElementById("millisecond");
+                      var _minutes = document.getElementById("minutes"); 
+                      var _hours = document.getElementById("hours"); 
+                      var startbutton = document.getElementById("startbutton");
+                      var stopbutton = document.getElementById("stopbutton");
+                      var resetbutton = document.getElementById("resetbutton");
+                      var second = 00;  
+                      var millisecond = 00;
+                      var minutes = 00;
+                      var hours = 00;
+                      var interval;
+
+
+               startbutton.onclick = function(){
+                      clearInterval(interval);
+                      interval = setInterval(startTimer, 0); 
+              }
+
+              stopbutton.onclick = function(){
+                      clearInterval(interval);
+              }
+
+              resetbutton.onclick = function(){
+                      clearInterval(interval);
+                      second = "00";
+                      millisecond = "00";
+                      minutes = "00";
+                      hours = "00";
+                      _second.innerHTML = second;
+                      _millisecond.innerHTML = millisecond;
+                      _minutes.innerHTML = minutes;
+                      _hours.innerHTML = hours; 
+              }
+
+              function startTimer(){
+                      millisecond++;
+
+                      if(millisecond <= 9){
+                                  _millisecond.innerHTML = "0" + millisecond; 
+                          }
+
+                       if(millisecond > 9){
+                                   _millisecond.innerHTML = millisecond;
+                          }   
+
+                       if(millisecond > 99){
+                                  second++;
+                                  _second.innerHTML = "0" + second;
+                                  millisecond = "0";
+                                  _millisecond.innerHTML = millisecond;
+                         }  
+                         
+                         if(second > 9){
+                                _second.innerHTML = second;  
+                         }
+
+                         if(second > 60){
+                            minutes++;
+                            _minutes.innerHTML = "0" + minutes;
+                            second = "0";
+                            _second.innerHTML = second;
+                         }
+
+                         if(minutes > 9){
+                             _minutes.innerHTML = minutes; 
+                         }  
+
+                         if(minutes > 60){
+                             hours++;
+                             _hours.innerHTML = "0" + hours;
+                             minutes + "0";
+                             _minutes.innerHTML = minutes;
+                         }
+
+                         if(hours > 9){
+                            _hours.innerHTML =  hours;
+                         }
+              }
+             
+            
+                         
+
+
+
+      </script>
+</body>
+</html>
